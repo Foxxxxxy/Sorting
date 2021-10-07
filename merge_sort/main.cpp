@@ -38,13 +38,13 @@ void merge(vector<int> &vec, int l, int r, int m) {
 }
 
 void merge_sort(vector<int> &vec, int l, int r) {
-    if (l >= r)
+    if (l + 1 >= r)
         return;
 
     int m =  (l + r) / 2;
 
     merge_sort(vec, l, m);
-    merge_sort(vec, m + 1, r);
+    merge_sort(vec, m, r);
     merge(vec, l, r, m);
 }
 
